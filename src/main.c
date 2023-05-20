@@ -19,11 +19,6 @@
 
 #include "kissfft/kiss_fftr.h"
 
-
-
-uint8_t run = 1;
-uint8_t run2 = 1;
-
 static lv_disp_t *disp;
 
 void start_systick_routine(void);
@@ -110,7 +105,7 @@ void start_systick_routine(void){
 }
 
 static void * systick_routine(void * arg){
-    while(run2) {
+    while(1) {
         usleep(5 * 1000);
         lv_tick_inc(5);
     }
@@ -123,7 +118,7 @@ void start_task_handler_routine(void){
 }
 
 static void * task_handler_routine(void * arg){
-    while(run2) {
+    while(1) {
         usleep(lv_task_handler());
     }
 }
