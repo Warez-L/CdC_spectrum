@@ -7,6 +7,8 @@ set(LV_CONF_PATH
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/lv_conf.h
         CACHE STRING "" FORCE)
 
+set(KISSFFT_DATATYPE float)
+
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 

@@ -2,7 +2,7 @@
 // Created by yaniss on 5/8/23.
 //
 
-#include "../include/ui_init.h"
+#include "../include/ui.h"
 
 #include <stdio.h>
 #include <unistd.h>
@@ -16,6 +16,9 @@
 #include "lvgl/demos/lv_demos.h"
 
 #include <lv_drivers/sdl/sdl.h>
+
+static lv_chart_series_t * ser1;
+static lv_obj_t * chart;
 
 void ui_init(){
 
@@ -67,3 +70,25 @@ void ui_init(){
 
 }
 
+void ui_draw(lv_obj_t * parent) {
+
+    /*Create a chart*/
+    chart = lv_chart_create(lv_scr_act());
+    lv_obj_set_size(chart, 1080, 720);
+    lv_obj_center(chart);
+    lv_chart_set_type(chart, LV_CHART_TYPE_LINE);   /*Show lines and points too*/
+
+    lv_chart_set_point_count(chart, 129);
+    lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, -25, 25);
+
+    /*Add two data series*/
+    ser1 = lv_chart_add_series(chart, lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+
+}
+
+void ui_update_chart(float *buff, uint16_t size){
+    for(uint16_t i = 4; i < size-8; i++){
+        ser1->y_points[i] = (int) buff[i*2+4];
+    }
+    lv_chart_refresh(chart);
+}

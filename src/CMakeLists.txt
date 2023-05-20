@@ -1,7 +1,6 @@
-add_executable(LV_Spectrum main.c ui_init.c)
+add_executable(LV_Spectrum main.c ui.c)
 
-target_include_directories(LV_Spectrum PUBLIC ${CMAKE_SOURCE_DIR}/include/)
-
+target_include_directories(LV_Spectrum PRIVATE ${CMAKE_SOURCE_DIR}a/include)
 
 target_link_libraries(
         LV_Spectrum
@@ -12,6 +11,8 @@ target_link_libraries(
         lvgl::examples
         lvgl::demos
         lvgl::drivers
+
+        kissfft::kissfft
 
         -lm
 )
