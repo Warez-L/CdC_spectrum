@@ -1,7 +1,9 @@
 # CdC_spectrum
 
-Ceci est ma participation au premier Codeathon dans le cadre du forum CdC.
+Ceci est ma participation au premier Codeathon dans le cadre du forum CdC. 
+
 Le projet n'est pas compatibles pour les systèmes windows mais il ne devrai pas être difficile à porter
+
 Seulement les fichiers WAV sont supporté, il faudra donc les encoder avec FFMPEG si besoin.
 
 # Dépendances externes
