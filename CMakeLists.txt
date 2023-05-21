@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.22)
 project(LV_Spectrum VERSION 1.0)
 
 set(CMAKE_C_STANDARD 99)
