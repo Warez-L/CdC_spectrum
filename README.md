@@ -7,7 +7,7 @@ Le projet n'est pas compatibles pour les systèmes windows mais il ne devrai pas
 Seulement les fichiers WAV sont supporté, il faudra donc les encoder avec FFMPEG si besoin.
 
 # Dépendances externes
--SDL2
+-libsdl2-dev libpng-dev libfft3w-dev
 
 # Build le projet
 
